@@ -1,29 +1,50 @@
+### Environment setup (windows)
+To set up a Python environment for your workshop on a Windows machine, you can use Micromamba, which is a lightweight package manager. Here's a step-by-step guide to setup
+
+1. **Download Micromamba**: Execute the command in PowerShell. This will download the latest version of Micromamba.
+```
+Invoke-Webrequest -URI https://micro.mamba.pm/api/micromamba/win-64/latest -OutFile micromamba.tar.bz2
+``` 
+
+2. **Extract and Move Executable**: Unpack the micromamba.tar.bz2 file and move the micromamba.exe file to the root directory using the command 
+```
+MOVE -Force micromamba\Library\bin\micromamba.exe micromamba.exe
+```
+
+3. **Set Environment Variable**: Define the Mamba root prefix with 
+```
+$Env:MAMBA_ROOT_PREFIX="$HOME\micromambaenv"
+```.
+
+4. **Invoke the Hook**: Run to invoke the necessary shell hook.
+```
+.\micromamba.exe shell hook -s powershell | Out-String | Invoke-Expression
+```
+
+5. **Initialize Shell**: Finally, initialize the shell with the command 
+```
+.\micromamba.exe shell init -s powershell -p "$HOME\micromambaenv"
+```
+
+
+### Environment setup (linux)
+
+1. Download micromamba: 
+
+
+
+6. **Create environment**: Create micromamba python environment from yaml file and activate
+```
+micromamba create -f environment.yaml -y
+micromamba activate geoenv
+```
+
+
+### Reference:
+
+https://mamba.readthedocs.io/en/latest/micromamba-installation.html#windows
+
 ## All Jupyter Notebook Assets
 
 Jupyter Notebook is used to run all examples and exercises.
-Jupyter is run in Docker with all dependencies installed.
 
-### Build
-
-```bash
-./build.sh
-```
-
-This should build the Docker Image `geopython/geopython-workshop:latest`.
-
-### Run
-
-Preferably using Docker Compose with Volume Mapping for Notebooks
-and Data. See [docker-compose.yml](../docker-compose.yml).
-
-To run standalone from within this directory:
-
-```bash
-docker run -it -p 8888:8888 -v $(pwd)/content:/jupyter/content geopython/geopython-workshop:latest
-```
-
-This applies Docker volume mapping for the workshop content contained under `content`.
-
-Look into the output logging and paste the URL with the token like:
-http://127.0.0.1:8888/?token=e72ed792ff1d9d90058a7b7443f1ff88f3b12384f721dabe
-in your browser.
