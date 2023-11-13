@@ -14,7 +14,7 @@ MOVE -Force micromamba\Library\bin\micromamba.exe micromamba.exe
 3. **Set Environment Variable**: Define the Mamba root prefix with 
 ```
 $Env:MAMBA_ROOT_PREFIX="$HOME\micromambaenv"
-```.
+```
 
 4. **Invoke the Hook**: Run to invoke the necessary shell hook.
 ```
@@ -34,6 +34,8 @@ $Env:MAMBA_ROOT_PREFIX="$HOME\micromambaenv"
 
 
 6. **Create environment**: Create micromamba python environment from yaml file and activate
+
+
 ```
 micromamba create -f environment.yaml -y
 micromamba activate geoenv
@@ -48,3 +50,19 @@ https://mamba.readthedocs.io/en/latest/micromamba-installation.html#windows
 
 Jupyter Notebook is used to run all examples and exercises.
 
+
+## Environment setup (Linux)
+
+### Linux Intel (x86_64):
+```sh
+curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj bin/micromamba
+```
+
+Put the following in `.bashrc` file
+```
+# Linux/bash:
+./bin/micromamba shell init -s bash -p ~/micromamba  # this writes to your .bashrc file
+# sourcing the bashrc file incorporates the changes into the running session.
+# better yet, restart your terminal!
+source ~/.bashrc
+```
