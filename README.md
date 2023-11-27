@@ -24,7 +24,7 @@ The purpose is to get familiar with most widely used python packages such as
 
 
 ## Installation
-
+For local installation of the code, perform the following steps 
 ### Environment setup (windows)
 To set up a Python environment for your workshop on a Windows machine, you can use Micromamba, which is a lightweight package manager. Here's a step-by-step guide to setup
 
@@ -33,7 +33,7 @@ To set up a Python environment for your workshop on a Windows machine, you can u
 Invoke-Webrequest -URI https://micro.mamba.pm/api/micromamba/win-64/latest -OutFile micromamba.tar.bz2
 ``` 
 
-2. **Extract and Move Executable**: Unpack the micromamba.tar.bz2 file and move the micromamba.exe file to the root     directory using the command 
+2. **Extract and Move Executable**: Unpack the micromamba.tar.bz2 file and move the micromamba.exe file to the root directory using the command 
 ```
 MOVE -Force micromamba\Library\bin\micromamba.exe micromamba.exe
 ```
@@ -54,9 +54,10 @@ $Env:MAMBA_ROOT_PREFIX="$HOME\micromambaenv"
 ```
 
 6. **Create environment**: Create micromamba python environment from yaml file and activate
+Go to your geopython-workshop repository and locate environment.yaml file is present and then run the command
 
 ```
-micromamba env create -f environment.yaml -y
+micromamba env create -f environment.yaml
 micromamba activate geoenv
 ```
 
