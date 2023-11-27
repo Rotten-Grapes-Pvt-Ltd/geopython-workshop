@@ -1,6 +1,6 @@
 # Doing Geospatial Analysis in Python
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Rotten-Grapes-Pvt-Ltd/geopython-workshop/HEAD?labpath=%2Fnotebooks)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Rotten-Grapes-Pvt-Ltd/geopython-workshop/HEAD)
 
 ## ❓ What to expect out of this workshop.
 This workshop will teach you about various python tools that will enable you to perform geospatial operations, either with existing data or by creating new datasets on the fly.
