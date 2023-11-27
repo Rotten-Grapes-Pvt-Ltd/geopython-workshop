@@ -9,4 +9,4 @@ ipyleaflet
 pandas-bokeh
 matplotlib
 Shapely
-GDAL==3.7
+GDAL==3.3.1
