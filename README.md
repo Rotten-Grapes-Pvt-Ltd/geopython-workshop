@@ -22,6 +22,53 @@ The purpose is to get familiar with most widely used python packages such as
 3. Raster Data Analysis
 4. Data visualisation
 
+
+## Installation
+
+### Environment setup (windows)
+To set up a Python environment for your workshop on a Windows machine, you can use Micromamba, which is a lightweight package manager. Here's a step-by-step guide to setup
+
+1. **Download Micromamba**: Execute the command in PowerShell. This will download the latest version of Micromamba.
+```
+Invoke-Webrequest -URI https://micro.mamba.pm/api/micromamba/win-64/latest -OutFile micromamba.tar.bz2
+``` 
+
+2. **Extract and Move Executable**: Unpack the micromamba.tar.bz2 file and move the micromamba.exe file to the root     directory using the command 
+```
+MOVE -Force micromamba\Library\bin\micromamba.exe micromamba.exe
+```
+
+3. **Set Environment Variable**: Define the Mamba root prefix with 
+```
+$Env:MAMBA_ROOT_PREFIX="$HOME\micromambaenv"
+```
+
+4. **Invoke the Hook**: Run to invoke the necessary shell hook.
+```
+.\micromamba.exe shell hook -s powershell | Out-String | Invoke-Expression
+```
+
+5. **Initialize Shell**: Finally, initialize the shell with the command 
+```
+.\micromamba.exe shell init -s powershell -p "$HOME\micromambaenv"
+```
+
+6. **Create environment**: Create micromamba python environment from yaml file and activate
+
+```
+micromamba env create -f environment.yaml -y
+micromamba activate geoenv
+```
+
+With mamba or conda (if already installed)
+```
+mamba env create -f environment.yaml
+```
+
+### Reference:
+
+https://mamba.readthedocs.io/en/latest/micromamba-installation.html#windows
+
 ## 👥 Who should attend this workshop ?
 This workshop is meant for people who are work with [GIS](https://en.wikipedia.org/wiki/Geographic_Information_System). Their work includes things such as cleaning data, analysing data, processing data and with AI, also predicting data.
 Anyone who is dealing in this can attend the workshop. 

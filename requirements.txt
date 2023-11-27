@@ -10,3 +10,4 @@ pandas-bokeh
 matplotlib
 Shapely
 GDAL==3.3.1
+rasterio
