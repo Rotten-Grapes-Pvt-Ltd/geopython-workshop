@@ -1,6 +1,6 @@
 # The Creative Commons Attribution 4.0 International (CC BY 4.0) license
 
-Copyright (c) 2019-2023 the Doing Geospatial in Python Team
+Copyright (c) 2023 Rotten Grapes private limited
 
 * * *
 
