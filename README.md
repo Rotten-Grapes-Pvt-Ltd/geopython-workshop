@@ -66,9 +66,15 @@ With mamba or conda (if already installed)
 mamba env create -f environment.yaml
 ```
 
-### Reference:
+### Environment setup (linux)
 
-https://mamba.readthedocs.io/en/latest/micromamba-installation.html#windows
+```
+python3 -m venv .venv
+source .venv/bin/activate
+sudo apt-get -y install < apt.txt
+pip install -r requirements.txt
+```
+
 
 ## 👥 Who should attend this workshop ?
 This workshop is meant for people who are work with [GIS](https://en.wikipedia.org/wiki/Geographic_Information_System). Their work includes things such as cleaning data, analysing data, processing data and with AI, also predicting data.
